@@ -1,0 +1,35 @@
+﻿<Window x:Class="lab13var7.WindowAddGrade"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab13var7"
+        mc:Ignorable="d"
+        Title="Добавить оценку" Height="350" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Добавить оценку" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Выбрать учащегося:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox Name="cmbStudent" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" DisplayMemberPath="Name"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Выбрать предмет:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox Name="cmbSubject" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" DisplayMemberPath="Name"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Выбрать оценку:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox Name="cmbGrade" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"/>
+
+        <Button Name="btnSave" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Content="Сохранить" Click="btnSave_Click"/>
+        <Button Name="btnCancel" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Content="Отменить" Click="btnCancel_Click"/>
+    </Grid>
+</Window>

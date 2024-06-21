@@ -1,0 +1,62 @@
+﻿<Window x:Class="lab13var7.WindowAddStudent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab13var7"
+        mc:Ignorable="d"
+        Title="Добавить студента" Height="600" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">Добавление Студента</TextBlock>
+
+        <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">Фамилия:</TextBlock>
+        <TextBox x:Name="txtSurname"  Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"></TextBox>
+
+        <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center">Имя:</TextBlock>
+        <TextBox Name="txtName"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"></TextBox>
+
+        <TextBlock Grid.Column="0" Grid.Row="3" VerticalAlignment="Center">Отчество:</TextBlock>
+        <TextBox Name="txtFatherName"  Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"></TextBox>
+
+        <TextBlock Grid.Column="0" Grid.Row="4" VerticalAlignment="Center">Дата рождения:</TextBlock>
+        <DatePicker Name="dpBirth"  Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"></DatePicker>
+
+        <TextBlock Grid.Column="0" Grid.Row="5" VerticalAlignment="Center">Номер телефона:</TextBlock>
+        <TextBox Name="txtPhoneNumber"  Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"></TextBox>
+
+        <TextBlock Grid.Column="0" Grid.Row="6" VerticalAlignment="Center">Рост:</TextBlock>
+        <TextBox Name="txtHeight"  Grid.Column="1" Grid.Row="6" VerticalAlignment="Center"></TextBox>
+        
+        <TextBlock Grid.Column="0" Grid.Row="7" VerticalAlignment="Center">Вес:</TextBlock>
+        <TextBox Name="txtWeight"  Grid.Column="1" Grid.Row="7" VerticalAlignment="Center"></TextBox>
+
+        <Border Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2"  BorderThickness="1"
+                BorderBrush="#124559"
+                VerticalAlignment="Top">
+            <Image Name="imgPhoto"  Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2"  HorizontalAlignment="Center" Height="194" VerticalAlignment="Top" Width="300"/>
+        </Border>
+
+        <Button Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2"  Content="Загрузить фото" Background="White" FontSize="18" Click="Button_Click_1"  ></Button>
+        <Button Grid.Column="1" Grid.Row="11" Content="Сохранить" Background="White" FontSize="18" Click="Button_Click" ></Button>
+    </Grid>
+</Window>

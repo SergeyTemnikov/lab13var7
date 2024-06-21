@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище PR_265_VorobyovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id_Student" />
+    </Key>
+    <Property Name="Id_Student" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Father_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birthday" Type="date" Nullable="false" />
+    <Property Name="Phone_Number" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="StudetnsGrade">
+    <Key>
+      <PropertyRef Name="Id_Grade" />
+    </Key>
+    <Property Name="Id_Grade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Student" Type="int" />
+    <Property Name="Id_Subject" Type="int" />
+    <Property Name="Grade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id_Subject" />
+    </Key>
+    <Property Name="Id_Subject" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_StudetnsGrade_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="StudetnsGrade" Type="Self.StudetnsGrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id_Student" />
+      </Principal>
+      <Dependent Role="StudetnsGrade">
+        <PropertyRef Name="Id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudetnsGrade_Subject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="StudetnsGrade" Type="Self.StudetnsGrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id_Subject" />
+      </Principal>
+      <Dependent Role="StudetnsGrade">
+        <PropertyRef Name="Id_Subject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище PR_265_VorobyovModelContainer">
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudetnsGrade" EntityType="Self.StudetnsGrade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_StudetnsGrade_Student" Association="Self.FK_StudetnsGrade_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="StudetnsGrade" EntitySet="StudetnsGrade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudetnsGrade_Subject" Association="Self.FK_StudetnsGrade_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="StudetnsGrade" EntitySet="StudetnsGrade" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
